@@ -10,6 +10,29 @@ A lightweight PyTorch-based relevance model that scores how well a dish matches 
 
 ---
 
+```mermaid
+flowchart TD
+    A["Raw indian_food.csv (name, ingredients, diet, times, flavor, course, state, region)"]
+      --> B["Load with pandas normalize columns"]
+
+    B --> C["Feature engineering total_time, clean state/region"]
+    C --> D["Build dish_text name + ingredients + meta"]
+
+    D --> E["Name-based queries {name}, {name} recipe"]
+    D --> F["Ingredient-based queries {course} with {ingredient}"]
+    D --> G["Region/state-based queries punjabi dessert"]
+    C --> H["Time-based queries quick {course} under 15 min"]
+
+    E --> I["Label pairs positives + sampled negatives"]
+    F --> I
+    G --> I
+    H --> I
+
+    I --> J["Combine all examples"]
+    J --> K["Drop duplicates"]
+    K --> L["train_pairs.csv\n(query, dish, label)"]
+```
+
 ## 📋 Table of Contents
 
 1. [Setup](#setup)
