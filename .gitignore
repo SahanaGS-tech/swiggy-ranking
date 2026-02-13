@@ -1,0 +1,85 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Data files (large CSVs and processed data)
+data/processed/*.csv
+data/processed/*.parquet
+data/processed/*.pkl
+data/processed/*.pickle
+# Keep raw data if small, or add pattern to ignore large files
+# data/raw/*.csv
+
+# Model files
+*.pth
+*.pt
+!model_best.pt  # Keep the trained model for submission
+*.h5
+*.pkl
+*.joblib
+models/
+checkpoints/
+saved_models/
+
+# Logs and outputs
+logs/
+*.log
+outputs/
+results/
+runs/
+
+# Environment variables
+.env
+.env.local
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
